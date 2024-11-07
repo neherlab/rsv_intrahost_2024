@@ -2,9 +2,12 @@ conda_environment: "workflow/envs/nextstrain.yaml"
 
 genesforglycosylation: ["G", "F"]
 
-builds_to_run: ["genome", "G", "F"]
+builds_to_run: ["genome"]
+# builds_to_run: ["genome", "G", "F"]
 
-resolutions_to_run: ["all-time", "6y", "3y"]
+resolutions_to_run: ["recent"]
+# resolutions_to_run: ["all-time", "6y", "3y"]
+
 
 exclude: "config/outliers.txt"
 
@@ -13,33 +16,36 @@ description: "config/description.md"
 strain_id_field: "accession"
 display_strain_field: "strain"
 
-subtypes: ['a', 'b']
+subtypes: ["a", "b"]
 
 filter:
   group_by: "year country"
   min_coverage:
     genome: 0.3
-    G: 0.3
-    F: 0.3
+    G: 0.8
+    F: 0.8
 
   min_length:
     genome: 10000
     G: 600
     F: 1200
   resolutions:
-    all-time:
-      min_date: 100Y
-    6y:
-      min_date: 6Y
-      background_min_date: 100Y
-    3y:
-      min_date: 3Y
-      background_min_date: 100Y
+    recent:
+      max_date: 1W
+      min_date: 10Y
+    # all-time:
+    #   max_date: 100Y
+    # 6y:
+    #   max_date: 6Y
+    #   min_date: 100Y
+    # 3y:
+    #   max_date: 3Y
+    #   min_date: 100Y
 
   subsample_max_sequences:
-    genome: 3000
-    G: 3000
-    F: 3000
+    genome: 1000
+    G: 1000
+    F: 1000
 
 files:
   color_schemes: "config/colors.tsv"

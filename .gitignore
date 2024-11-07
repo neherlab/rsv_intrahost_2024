@@ -7,6 +7,8 @@ build/
 ingest/benchmarks/
 ingest/rsv-a_nextclade/
 ingest/rsv-b_nextclade/
+config/clades_consortium_*.tsv
+input_lab_samples/
 
 # Snakemake
 .snakemake/

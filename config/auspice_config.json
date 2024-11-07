@@ -35,6 +35,36 @@
       "type": "categorical"
     },
     {
+      "key": "source",
+      "title": "Source",
+      "type": "categorical"
+    },
+    {
+      "key": "Patient_Nr",
+      "title": "Patient",
+      "type": "categorical"
+    },
+    {
+      "key": "Delta Days",
+      "title": "Delta Days",
+      "type": "continuous"
+    },
+    {
+      "key": "Delta Days",
+      "title": "Delta Days",
+      "type": "continuous"
+    },
+    {
+      "key": "genome_coverage",
+      "title": "Genome Coverage",
+      "type": "continuous"
+    },
+    {
+      "key": "Primer Pools",
+      "title": "Primer Pools",
+      "type": "categorical"
+    },
+    {
       "key": "glyc",
       "title": "Glycosylation",
       "type": "ordinal"
@@ -56,6 +86,10 @@
   "filters": [
     "country",
     "region",
-    "clade_membership"
-  ]
+    "clade_membership",
+    "source",
+    "Patient_Nr",
+    "Delta Days",
+    "genome_coverage",
+    "Primer Pools"]
 }
