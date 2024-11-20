@@ -50,9 +50,9 @@
       "type": "continuous"
     },
     {
-      "key": "Delta Days",
-      "title": "Delta Days",
-      "type": "continuous"
+      "key": "amplicon_types",
+      "title": "amplicon types",
+      "type": "categorical"
     },
     {
       "key": "genome_coverage",
@@ -60,8 +60,13 @@
       "type": "continuous"
     },
     {
-      "key": "Primer Pools",
-      "title": "Primer Pools",
+      "key": "Pools",
+      "title": "Pools",
+      "type": "categorical"
+    },
+    {
+      "key": "stationary",
+      "title": "Stationary",
       "type": "categorical"
     },
     {
@@ -91,5 +96,7 @@
     "Patient_Nr",
     "Delta Days",
     "genome_coverage",
-    "Primer Pools"]
+    "Pools",
+    "stationary",
+    "amplicon_types"]
 }

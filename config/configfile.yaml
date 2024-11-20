@@ -21,7 +21,7 @@ subtypes: ["a", "b"]
 filter:
   group_by: "year country"
   min_coverage:
-    genome: 0.3
+    genome: 0.8
     G: 0.8
     F: 0.8
 
@@ -31,8 +31,8 @@ filter:
     F: 1200
   resolutions:
     recent:
-      max_date: 1W
-      min_date: 10Y
+      max_date: 1D
+      min_date: 3Y
     # all-time:
     #   max_date: 100Y
     # 6y:

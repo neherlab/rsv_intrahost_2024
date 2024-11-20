@@ -56,3 +56,13 @@ From within the destination directory, run
 ```
 rsync -a <path-to>/rsv/nextclade/datasets/ .
 ```
+# Updates for lab samples analysis:
+
+To construct a tree with an addition of lab samples, the annotation and the sequences have to be located in `input_lab_samples/{a_or_b}/` with the following names:
+- comb_ann.tsv,
+- nextclade_results.tsv,
+- sequences.fasta
+
+comb_ann contains NGS_ID column, which is later used as an index. nextclade_results.tsv is a standard nextclade output.
+
+The pipeline then concatenates these sequences and annotation with the opensource ones, constructs a tree for all lab samples + a selected number of background open-source ones. Otherwise, the pipeline works as the master one.
