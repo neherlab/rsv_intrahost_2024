@@ -124,7 +124,7 @@ rule filter_os:
             --output {output.sequences} \
             --group-by {params.group_by} \
             --subsample-max-sequences {params.subsample_max_sequences} \
-            --query "({params.min_coverage}) & (source == 'NCBI')"
+            --query "({params.min_coverage}) & (source == 'NCBI') & (region == 'Europe')"
         """
 
 

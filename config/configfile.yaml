@@ -5,7 +5,7 @@ genesforglycosylation: ["G", "F"]
 builds_to_run: ["genome"]
 # builds_to_run: ["genome", "G", "F"]
 
-resolutions_to_run: ["recent", "all-time"]
+resolutions_to_run: ["recent", "all-time", "5y"]
 # resolutions_to_run: ["all-time", "6y", "3y"]
 
 
@@ -36,9 +36,9 @@ filter:
     all-time:
       max_date: 1D
       min_date: 100Y
-    # 6y:
-    #   max_date: 6Y
-    #   min_date: 100Y
+    5y:
+      max_date: 1D
+      min_date: 5Y
     # 3y:
     #   max_date: 3Y
     #   min_date: 100Y
