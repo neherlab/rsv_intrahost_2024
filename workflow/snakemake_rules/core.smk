@@ -78,11 +78,8 @@ rule filter_lab:
             --metadata {input.metadata} \
             --metadata-id-columns {params.strain_id} \
             --exclude {input.exclude} \
-            --min-length {params.min_length} \
             --output {output.sequences} \
-            --query "({params.min_coverage}) & (source == 'USB')" \
-            --query-columns source:str
-            # --exclude-where 'qc.overallStatus=bad' \
+            --query "({params.min_coverage}) & (source == 'USB')"
         """
 
 
@@ -126,9 +123,8 @@ rule filter_os:
             --min-length {params.min_length} \
             --output {output.sequences} \
             --group-by {params.group_by} \
-             --subsample-max-sequences {params.subsample_max_sequences} \
-            --query "({params.min_coverage}) & (source == 'NCBI')" \
-            --query-columns source:str region:str
+            --subsample-max-sequences {params.subsample_max_sequences} \
+            --query "({params.min_coverage}) & (source == 'NCBI')"
         """
 
 

@@ -67,7 +67,8 @@ def merge_metadata(
     lab_ann_df = lab_ann_df.loc[nextclade_df.index]
     res_ann_df = pd.concat([ann_template_series] * lab_ann_df.shape[0], axis=1).T
     res_ann_df.accession = lab_ann_df.index
-    res_ann_df.date = lab_ann_df["Year"].apply(lambda x: str(x) + "-01-01").values
+    res_ann_df['date'] = lab_ann_df.apply(lambda row: f"{row['Year']}-{row['Months']:02d}-XX", axis=1).values
+
     for col in [
         "clade",
         "G_clade",
@@ -83,7 +84,7 @@ def merge_metadata(
     res_ann_df["F_coverage"] = nextclade_df["coverage"].values
     res_ann_df["genbank_accession_rev"] = res_ann_df["accession"]
     res_ann_df["strain"] = res_ann_df["accession"]
-    for col in ["Patient_Nr", "Virus Type",	"Year", "Delta Days", "amplicon_types", "Pools", "Run_N", "stationary"]:
+    for col in ["Patient_Nr", "Virus Type",	"Year", "Months", "Delta Days", "amplicon_types", "Pools", "Run_N", "stationary"]:
         res_ann_df[col] = lab_ann_df[col].values
     merged_metadata = pd.concat([os_metadata, res_ann_df])
     # Save the merged metadata
