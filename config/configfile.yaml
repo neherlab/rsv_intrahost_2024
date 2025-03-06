@@ -35,13 +35,13 @@ filter:
       min_date: 3Y
     all-time:
       max_date: 1D
-      min_date: 100Y
+      min_date: 1975-01-01
     5y:
       max_date: 1D
       min_date: 5Y
     # 3y:
     #   max_date: 3Y
-    #   min_date: 100Y
+    #   min_date: 1975-01-01
 
   subsample_max_sequences:
     genome: 1000
